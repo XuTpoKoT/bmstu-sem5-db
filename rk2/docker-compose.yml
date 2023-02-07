@@ -1,0 +1,12 @@
+services:
+  postgres:
+    image: postgres:13.3
+    container_name: rk2
+    environment:
+      POSTGRES_DB: "rk2_db"
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "postgres"
+    volumes:
+      - /home/dmitriy/bmstu/DB/rk:/mnt
+    ports:
+      - "5432:5432"

@@ -1,0 +1,25 @@
+docker run -d -e POSTGRES_PASSWORD=pass -p 5433:5432 -v /home/dmitriy/bmstu/DB/labs:mnt —name guitar_shop postgres:13.3
+docker-compose up -d
+docker exec -it  music_shop bash
+docker ps - список контейнеров
+
+psql -U postgres -d postgres - войти через юзера posgres c паролем postgres
+\c music_shop_db - коннект к базе
+\i /mnt/lab_01/fill_db.sql
+\i /mnt/create.sql
+
+
+
+
+==============
+CREATE TABLE orders_json (
+    id uuid DEFAULT gen_random_uuid (),
+    doc jsonb NOT NULL
+);
+
+-- Загрузка данных в таблицу
+CREATE TEMP TABLE orders_json_tmp (
+    "json" jsonb
+);
+
+

@@ -1,0 +1,10 @@
+docker run -d -e POSTGRES_PASSWORD=pass -p 5433:5432 -v /home/dmitriy/bmstu/DB/labs:mnt —name guitar_shop postgres:13.3
+sudo docker-compose up -d
+sudo docker exec -it  music_shop bash
+docker ps - список контейнеров
+
+psql -U postgres -d postgres - войти через юзера posgres c паролем postgres
+\c music_shop_db - коннект к базе
+sudo \i /mnt/lab_01/create_db.sql
+sudo \i /mnt/lab_01/fill_db.sql
+

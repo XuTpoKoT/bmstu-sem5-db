@@ -1,0 +1,12 @@
+services:
+  postgres:
+    image: postgres:13.3
+    container_name: music_shop
+    environment:
+      POSTGRES_DB: "music_shop_db"
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "postgres"
+    volumes:
+      - /home/dmitriy/bmstu/DB/labs:/mnt
+    ports:
+      - "5432:5432"
